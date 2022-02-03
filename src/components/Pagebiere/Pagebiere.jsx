@@ -1,12 +1,26 @@
-import React from "react";
-import Beers from "../../Images/Beers.jpg";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./Pagebiere.css";
+import Cardbiere from "../Cardbiere/Cardbiere";
 
 function Pagebiere() {
+  const [bieres, setBieres] = useState([]);
+
+  /** Fetch sur la BDD */
+  useEffect(() => {
+    axios.get(`http://localhost:5000/beers`).then((res) => {
+      console.log(res);
+      setBieres(res.data);
+    });
+  }, []);
+  console.log(bieres);
+
   return (
     <div>
-      <div className="imgbeers">
-        <img src={Beers} alt="beers" />
+      <div className="bgimg">
+        <div>
+          <Cardbiere bieres={bieres} />
+        </div>
       </div>
     </div>
   );
