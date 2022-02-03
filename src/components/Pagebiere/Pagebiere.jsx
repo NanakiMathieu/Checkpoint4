@@ -6,6 +6,7 @@ import Cardbiere from "../Cardbiere/Cardbiere";
 function Pagebiere() {
   const [bieres, setBieres] = useState([]);
 
+  /** Fetch sur la BDD */
   useEffect(() => {
     axios.get(`http://localhost:5000/beers`).then((res) => {
       console.log(res);

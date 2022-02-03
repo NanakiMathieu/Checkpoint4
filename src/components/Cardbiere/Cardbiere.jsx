@@ -7,11 +7,13 @@ import "./Cardbiere.css";
 function Cardbiere({ bieres }) {
   const [modalShow, setModalShow] = useState([]);
 
+  /** Fonction qui affiche le modal en cliquant sur details */
   const onHideModal = () => {
     const hideModal = modalShow.map((res) => false);
     setModalShow(hideModal);
   };
 
+  /** Fonction qui ferme le modal en cliquant sur close ou en dehors de la fenetre */
   const onShowModal = (index) => {
     const newModalShow = [...modalShow];
     newModalShow[index] = true;
