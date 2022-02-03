@@ -1,5 +1,7 @@
 import React from "react";
-import logo from "../../Images/logoN.png";
+import { Link } from "react-router-dom";
+
+import logo from "../../Images/logoN.jpg";
 import "./Navbar.css";
 
 function Navbar() {
@@ -13,10 +15,17 @@ function Navbar() {
               Nao Brewery
             </li>
           </ul>
+
           <ul className="second-part">
-            <li>Home</li>
-            <li>Bières</li>
-            <li>Formulaire</li>
+            {/* <Link to="/" className="second-part">
+              Home
+            </Link> */}
+            <Link to="/formulaire" className="second-part">
+              Formulaire
+            </Link>
+            <Link to="/bieres" className="second-part">
+              Bières
+            </Link>
           </ul>
         </nav>
       </div>
