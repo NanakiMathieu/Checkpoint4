@@ -11,6 +11,7 @@ function Formulaire() {
     ph: "",
   });
 
+  /** Fonction qui permets de poster la recette sur le back */
   const submit = (e) => {
     e.preventDefault();
     axios
@@ -21,6 +22,8 @@ function Formulaire() {
       })
       .catch((error) => error);
   };
+
+  /** Fonction qui mets a jour data avec les valeurs des inputs */
 
   const handle = (e) => {
     const newData = { ...data };
